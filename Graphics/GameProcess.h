@@ -1,7 +1,6 @@
 #pragma once
 
 #include <windows.h>
-#include <memory>
 
 class FlatGraphics;
 class InputManager;
@@ -12,6 +11,8 @@ class GameProcess
 public:
 	GameProcess() = default;
 	~GameProcess() = default;
+	GameProcess(const GameProcess&) = delete;
+	GameProcess& operator=(const GameProcess&) = delete;
 
 	HRESULT Initialize(HINSTANCE hInstance);
 	void Loop();
@@ -38,12 +39,14 @@ private:
 
 
 	/// Graphics
-	std::unique_ptr<FlatGraphics> m_flatGraphics = nullptr;
+	FlatGraphics* m_flatGraphics = nullptr;
 	static FlatGraphics* m_flatGraphicsInstance;
 
 	/// Managers
-	std::unique_ptr<TimeManager> m_timeManager = nullptr;
-	std::unique_ptr<InputManager> m_inputManager = nullptr;
+	TimeManager* m_timeManager = nullptr;
+	InputManager* m_inputManager = nullptr;
+
+	float m_deltaTime = 0.0f;
 
 };
 

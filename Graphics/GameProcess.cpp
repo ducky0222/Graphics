@@ -39,9 +39,9 @@ HRESULT GameProcess::Initialize(HINSTANCE hInstance)
 	}
 
 	/// Graphics
-	m_flatGraphics = std::make_unique<FlatGraphics>();
+	m_flatGraphics = new FlatGraphics;
 
-	m_flatGraphicsInstance = m_flatGraphics.get();
+	m_flatGraphicsInstance = m_flatGraphics;
 
 	// 윈도우를 화면에 띄운다 / 갱신한다
 	ShowWindow(m_hWnd, SW_SHOWNORMAL);
@@ -51,9 +51,11 @@ HRESULT GameProcess::Initialize(HINSTANCE hInstance)
 	recalcWindowSize();
 
 	/// Managers
-	m_timeManager = std::make_unique<TimeManager>();
+	m_timeManager = new TimeManager;
+	m_timeManager->Initialize();
 
-	m_inputManager = std::make_unique<InputManager>();
+	m_inputManager = new InputManager;
+	m_inputManager->Initialize();
 
 	return S_OK;
 }
@@ -66,7 +68,7 @@ void GameProcess::Loop()
 		{
 			if (m_msg.message == WM_QUIT)
 				break;
-			
+
 			DispatchMessage(&m_msg);
 		}
 		else
@@ -79,12 +81,16 @@ void GameProcess::Loop()
 
 void GameProcess::Finalize()
 {
-
+	delete m_flatGraphics;
+	delete m_inputManager;
+	delete m_timeManager;
 }
 
 void GameProcess::updateAll()
 {
-
+	m_timeManager->Update();
+	m_deltaTime = m_timeManager->GetDeltaTime();
+	m_inputManager->Update();
 }
 
 void GameProcess::renderAll()
@@ -140,7 +146,7 @@ LRESULT CALLBACK GameProcess::WndProc(HWND hWnd, UINT message, WPARAM wParam, LP
 	case WM_MOUSEMOVE:
 		data = static_cast<int>(wParam);
 		//m_pGraphicsEngineInstance->OnMouseMove(data, LOWORD(lParam), HIWORD(lParam));
-
+		break;
 	case WM_PAINT:
 		hdc = BeginPaint(hWnd, &ps);
 		EndPaint(hWnd, &ps);
