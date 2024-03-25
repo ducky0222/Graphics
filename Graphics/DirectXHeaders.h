@@ -18,3 +18,5 @@
 #ifdef _DEBUG
 #pragma comment(lib, "../lib/DirectXTex.lib")
 #endif
+
+#define ReleaseCOM(x) { if(x){ x->Release(); x = 0; } }

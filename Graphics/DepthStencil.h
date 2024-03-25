@@ -35,3 +35,34 @@ protected:
 	Usage m_usage = {};
 };
 
+class ShaderInputDepthStencil : public DepthStencil
+{
+public:
+	ShaderInputDepthStencil(FlatGraphics& graphics, unsigned slot, Usage usage = Usage::DEPTHSTENCIL);
+	ShaderInputDepthStencil(FlatGraphics& graphics, unsigned width, unsigned height, unsigned slot, Usage usage = Usage::DEPTHSTENCIL);
+
+	virtual void OnResize(FlatGraphics& graphics);
+
+
+	// DepthStencil을(를) 통해 상속됨
+	void Bind(FlatGraphics& graphics) override;
+
+private:
+	unsigned slot = 0;
+	winrt::com_ptr<ID3D11ShaderResourceView> m_srv = nullptr;
+
+};
+
+class OutputOnlyDepthStencil : public DepthStencil
+{
+public:
+	OutputOnlyDepthStencil(FlatGraphics& graphics);
+	OutputOnlyDepthStencil(FlatGraphics& graphics, unsigned width, unsigned height);
+
+	using DepthStencil::OnResize;
+
+
+	// DepthStencil을(를) 통해 상속됨
+	void Bind(FlatGraphics& graphics) override;
+
+};

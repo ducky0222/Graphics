@@ -3,7 +3,7 @@
 #include "TimeManager.h"
 #include "InputManager.h"
 
-#include <imgui_impl_win32.h>
+#include "ImGuiRelatives.h"
 
 FlatGraphics* GameProcess::m_flatGraphicsInstance = nullptr;
 extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
@@ -81,6 +81,8 @@ void GameProcess::Loop()
 
 void GameProcess::Finalize()
 {
+	m_flatGraphics->Finalize();
+
 	delete m_flatGraphics;
 	delete m_inputManager;
 	delete m_timeManager;

@@ -26,6 +26,7 @@
     <ClInclude Include="GameProcess.h" />
     <ClInclude Include="GraphicsResource.h" />
     <ClInclude Include="IBindable.h" />
+    <ClInclude Include="ImGuiRelatives.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="RenderTarget.h" />
     <ClInclude Include="STLHeaders.h" />
