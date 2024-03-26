@@ -13,6 +13,15 @@
     <Filter Include="02. Bindable">
       <UniqueIdentifier>{82678093-7a3f-46be-89a4-5c15bfbc33a5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03. Jobber">
+      <UniqueIdentifier>{f66c289b-118d-488f-bb94-1f3c8e2976b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04. Model">
+      <UniqueIdentifier>{ee767756-961f-484e-9145-4d90962eb2df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Helper">
+      <UniqueIdentifier>{a2488afa-3935-4eba-9c7f-52d41f6ab769}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameProcess.h">

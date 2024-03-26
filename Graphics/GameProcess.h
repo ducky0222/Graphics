@@ -40,7 +40,6 @@ private:
 
 	/// Graphics
 	FlatGraphics* m_flatGraphics = nullptr;
-	static FlatGraphics* m_flatGraphicsInstance;
 
 	/// Managers
 	TimeManager* m_timeManager = nullptr;

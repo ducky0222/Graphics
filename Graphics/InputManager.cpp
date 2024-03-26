@@ -51,7 +51,7 @@ void InputManager::Update()
 				m_keys[i].keyState = KEY_STATE::AWAY;
 
 			else if (m_keys[i].keyState == KEY_STATE::AWAY)
-				m_keys[i].keyState == KEY_STATE::NONE;
+				m_keys[i].keyState = KEY_STATE::NONE;
 		}
 	}
 

@@ -5,7 +5,6 @@
 
 #include "ImGuiRelatives.h"
 
-FlatGraphics* GameProcess::m_flatGraphicsInstance = nullptr;
 extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 HRESULT GameProcess::Initialize(HINSTANCE hInstance)
@@ -40,8 +39,7 @@ HRESULT GameProcess::Initialize(HINSTANCE hInstance)
 
 	/// Graphics
 	m_flatGraphics = new FlatGraphics;
-
-	m_flatGraphicsInstance = m_flatGraphics;
+	m_flatGraphics->Initialize(m_hWnd, m_screenWidth, m_screenHeight, false);
 
 	// 윈도우를 화면에 띄운다 / 갱신한다
 	ShowWindow(m_hWnd, SW_SHOWNORMAL);

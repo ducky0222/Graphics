@@ -29,6 +29,9 @@ public:
 	bool GetUseImGui() const { return m_useImGui; }
 	void SetUseImGui(bool val) { m_useImGui = val; }
 
+	winrt::com_ptr<ID3D11Device> GetDevice() const { return m_device; }
+	winrt::com_ptr<ID3D11DeviceContext> GetContext() const { return m_context; }
+
 private:
 	winrt::com_ptr<ID3D11Device> m_device = nullptr;
 	winrt::com_ptr<ID3D11DeviceContext> m_context = nullptr;
