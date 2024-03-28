@@ -1,6 +1,7 @@
 #include "FlatGraphics.h"
 #include "RenderTarget.h"
 #include "DepthStencil.h"
+#include "Camera.h"
 
 #include "ImGuiRelatives.h"
 
@@ -102,6 +103,8 @@ void FlatGraphics::Initialize(HWND hWnd, unsigned width, unsigned height, bool u
 		ImGui_ImplWin32_Init(hWnd);
 		ImGui_ImplDX11_Init(m_device.get(), m_context.get());
 	}
+
+	m_camera = std::make_unique<Camera>();
 }
 
 void FlatGraphics::Finalize()
@@ -143,3 +146,34 @@ void FlatGraphics::OnResize(unsigned width, unsigned height)
 	vp.MaxDepth = 1.0f;
 	m_context->RSSetViewports(1, &vp);
 }
+
+void FlatGraphics::BeginRender()
+{
+	m_camera->UpdateViewMatrix();
+
+	if (m_useImGui)
+	{
+		ImGui_ImplDX11_NewFrame();
+		ImGui_ImplWin32_NewFrame();
+		ImGui::NewFrame();
+	}
+}
+
+void FlatGraphics::DrawIndexed(unsigned count)
+{
+	m_context->DrawIndexed(count, 0, 0);
+}
+
+void FlatGraphics::EndRender()
+{
+	if (m_useImGui)
+	{
+		ImGui::Render();
+		ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
+	}
+
+	m_swapChain->Present(1, 0);
+
+	/// TODO RenderGraph, models reset
+}
+

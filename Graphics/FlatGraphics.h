@@ -7,6 +7,7 @@
 
 class RenderTarget;
 class DepthStencil;
+class Camera;
 
 class FlatGraphics
 {
@@ -23,6 +24,10 @@ public:
 
 	void OnResize(unsigned width, unsigned height);
 
+	void BeginRender();
+	void DrawIndexed(unsigned count);
+	void EndRender();
+
 	/// Getter Setter
 	unsigned GetWidth() const { return m_width; }
 	unsigned GetHeight() const { return m_height; }
@@ -32,7 +37,13 @@ public:
 	winrt::com_ptr<ID3D11Device> GetDevice() const { return m_device; }
 	winrt::com_ptr<ID3D11DeviceContext> GetContext() const { return m_context; }
 
+	std::shared_ptr<RenderTarget> GetRenderTarget() const { return m_renderTarget; }
+	std::shared_ptr<RenderTarget> GetBackBuffer() const { return m_backBuffer; }
+	std::shared_ptr<DepthStencil> GetDepthStencil() const { return m_depthStencil; }
+
 private:
+	/// TODO Camera Ãß°¡
+
 	winrt::com_ptr<ID3D11Device> m_device = nullptr;
 	winrt::com_ptr<ID3D11DeviceContext> m_context = nullptr;
 	winrt::com_ptr<IDXGISwapChain> m_swapChain = nullptr;
@@ -46,5 +57,7 @@ private:
 	unsigned m_height = 0;
 
 	bool m_useImGui = true;
+
+	std::unique_ptr<Camera> m_camera = nullptr;
 };
 

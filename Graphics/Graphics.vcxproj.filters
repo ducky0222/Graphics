@@ -60,6 +60,9 @@
     <ClInclude Include="ImGuiRelatives.h">
       <Filter>99. Headers</Filter>
     </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>05. Helper</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameProcess.cpp">
@@ -88,6 +91,9 @@
     </ClCompile>
     <ClCompile Include="DepthStencil.cpp">
       <Filter>02. Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>05. Helper</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
