@@ -28,10 +28,13 @@
     <ClInclude Include="GraphicsResource.h" />
     <ClInclude Include="IBindable.h" />
     <ClInclude Include="ImGuiRelatives.h" />
+    <ClInclude Include="IndexBuffer.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="RenderTarget.h" />
+    <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="STLHeaders.h" />
     <ClInclude Include="TimeManager.h" />
+    <ClInclude Include="VertexBuffer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BufferResource.cpp" />
@@ -41,9 +44,12 @@
     <ClCompile Include="GameProcess.cpp" />
     <ClCompile Include="GraphicsResource.cpp" />
     <ClCompile Include="IBindable.cpp" />
+    <ClCompile Include="IndexBuffer.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="RenderTarget.cpp" />
+    <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="TimeManager.cpp" />
+    <ClCompile Include="VertexBuffer.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
