@@ -76,6 +76,15 @@
     <ClInclude Include="IndexBuffer.h">
       <Filter>02. Bindable\Buffer</Filter>
     </ClInclude>
+    <ClInclude Include="ConstantBuffer.h">
+      <Filter>02. Bindable\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="Source.h">
+      <Filter>03. Jobber</Filter>
+    </ClInclude>
+    <ClInclude Include="Sink.h">
+      <Filter>03. Jobber</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TimeManager.cpp">
@@ -114,6 +123,15 @@
     <ClCompile Include="GameProcess.cpp" />
     <ClCompile Include="IndexBuffer.cpp">
       <Filter>02. Bindable\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstantBuffer.cpp">
+      <Filter>02. Bindable\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="Source.cpp">
+      <Filter>03. Jobber</Filter>
+    </ClCompile>
+    <ClCompile Include="Sink.cpp">
+      <Filter>03. Jobber</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

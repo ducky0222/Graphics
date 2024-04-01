@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="BufferResource.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="ConstantBuffer.h" />
     <ClInclude Include="DepthStencil.h" />
     <ClInclude Include="DirectXHeaders.h" />
     <ClInclude Include="FlatGraphics.h" />
@@ -32,6 +33,8 @@
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="RenderTarget.h" />
     <ClInclude Include="ResourceManager.h" />
+    <ClInclude Include="Sink.h" />
+    <ClInclude Include="Source.h" />
     <ClInclude Include="STLHeaders.h" />
     <ClInclude Include="TimeManager.h" />
     <ClInclude Include="VertexBuffer.h" />
@@ -39,6 +42,7 @@
   <ItemGroup>
     <ClCompile Include="BufferResource.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="ConstantBuffer.cpp" />
     <ClCompile Include="DepthStencil.cpp" />
     <ClCompile Include="FlatGraphics.cpp" />
     <ClCompile Include="GameProcess.cpp" />
@@ -48,6 +52,8 @@
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="RenderTarget.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
+    <ClCompile Include="Sink.cpp" />
+    <ClCompile Include="Source.cpp" />
     <ClCompile Include="TimeManager.cpp" />
     <ClCompile Include="VertexBuffer.cpp" />
   </ItemGroup>

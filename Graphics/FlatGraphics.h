@@ -2,12 +2,12 @@
 
 #include <windows.h>
 
+#include "Camera.h"
 #include "DirectXHeaders.h"
 #include "STLHeaders.h"
 
 class RenderTarget;
 class DepthStencil;
-class Camera;
 
 class FlatGraphics
 {
