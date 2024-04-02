@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BindingPass.h" />
     <ClInclude Include="BufferResource.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="ConstantBuffer.h" />
@@ -28,18 +29,30 @@
     <ClInclude Include="GameProcess.h" />
     <ClInclude Include="GraphicsResource.h" />
     <ClInclude Include="IBindable.h" />
+    <ClInclude Include="IDrawable.h" />
     <ClInclude Include="ImGuiRelatives.h" />
     <ClInclude Include="IndexBuffer.h" />
+    <ClInclude Include="InputLayout.h" />
     <ClInclude Include="InputManager.h" />
+    <ClInclude Include="Job.h" />
+    <ClInclude Include="Pass.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="RenderGraph.h" />
+    <ClInclude Include="RenderQueuePass.h" />
     <ClInclude Include="RenderTarget.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Sink.h" />
     <ClInclude Include="Source.h" />
     <ClInclude Include="STLHeaders.h" />
     <ClInclude Include="TimeManager.h" />
+    <ClInclude Include="Topology.h" />
+    <ClInclude Include="Utils.h" />
+    <ClInclude Include="Vertex.h" />
     <ClInclude Include="VertexBuffer.h" />
+    <ClInclude Include="windows.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BindingPass.cpp" />
     <ClCompile Include="BufferResource.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="ConstantBuffer.cpp" />
@@ -48,13 +61,23 @@
     <ClCompile Include="GameProcess.cpp" />
     <ClCompile Include="GraphicsResource.cpp" />
     <ClCompile Include="IBindable.cpp" />
+    <ClCompile Include="IDrawable.cpp" />
     <ClCompile Include="IndexBuffer.cpp" />
+    <ClCompile Include="InputLayout.cpp" />
     <ClCompile Include="InputManager.cpp" />
+    <ClCompile Include="Job.cpp" />
+    <ClCompile Include="Pass.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="RenderGraph.cpp" />
+    <ClCompile Include="RenderQueuePass.cpp" />
     <ClCompile Include="RenderTarget.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="Sink.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="TimeManager.cpp" />
+    <ClCompile Include="Topology.cpp" />
+    <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="Vertex.cpp" />
     <ClCompile Include="VertexBuffer.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -149,9 +172,10 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
     </ClCompile>
     <Link>
       <SubSystem>

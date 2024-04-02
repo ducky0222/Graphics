@@ -12,5 +12,11 @@ public:
 
 	virtual void Bind(FlatGraphics& graphics) abstract;
 	virtual void InitReference(const class IDrawable& drawable) {}
+
+	virtual std::string GetUID() const
+	{
+		assert(false);
+		return "";
+	}
 };
 

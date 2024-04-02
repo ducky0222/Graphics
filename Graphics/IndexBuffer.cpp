@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "IndexBuffer.h"
 
 IndexBuffer::IndexBuffer(FlatGraphics& graphics, const std::vector<unsigned>& indices)
@@ -23,7 +24,7 @@ IndexBuffer::IndexBuffer(FlatGraphics& graphics, std::string tag, const std::vec
 	GetDevice(graphics)->CreateBuffer(&desc, &iData, m_indexBuffer.put());
 }
 
-std::shared_ptr<IndexBuffer> IndexBuffer::Create(FlatGraphics& graphics, const std::string& tag, const vector<unsigned>& indices)
+std::shared_ptr<IndexBuffer> IndexBuffer::Create(FlatGraphics& graphics, const std::string& tag, const std::vector<unsigned>& indices)
 {
 	return ResourceManager::Create<IndexBuffer>(graphics, tag, indices);
 }
@@ -35,5 +36,6 @@ void IndexBuffer::Bind(FlatGraphics& graphics)
 
 std::string IndexBuffer::generateUID(const std::string& tag)
 {
+	using namespace std::string_literals;
 	return typeid(IndexBuffer).name() + "#"s + tag;
 }

@@ -1,8 +1,5 @@
 #pragma once
 
-#include "STLHeaders.h"
-#include <cassert>
-
 class IBindable;
 class BufferResource;
 

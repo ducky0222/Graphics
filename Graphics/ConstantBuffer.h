@@ -82,12 +82,12 @@ public:
 
 	virtual void Bind(FlatGraphics& graphics) override;
 
-	string GetUID() const override;		
+	std::string GetUID() const override;		
 };
 
 #pragma region VertexConstantBufferFunc
 template<typename T>
-string VertexConstantBuffer<T>::GetUID() const
+std::string VertexConstantBuffer<T>::GetUID() const
 {
 	return GenerateUID(m_slot);
 }
@@ -101,7 +101,8 @@ void VertexConstantBuffer<T>::Bind(FlatGraphics& graphics)
 template<typename T>
 std::string VertexConstantBuffer<T>::GenerateUID(unsigned slot /*= 0*/)
 {
-	return typeid(VertexConstantBuffer).name() + "#"s + to_string(slot);
+	using namespace std::string_literals;
+	return typeid(VertexConstantBuffer).name() + "#"s + std::to_string(slot);
 }
 
 template<typename T>

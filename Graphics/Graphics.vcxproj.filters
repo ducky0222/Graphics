@@ -72,7 +72,6 @@
     <ClInclude Include="ResourceManager.h">
       <Filter>01. Managers</Filter>
     </ClInclude>
-    <ClInclude Include="GameProcess.h" />
     <ClInclude Include="IndexBuffer.h">
       <Filter>02. Bindable\Buffer</Filter>
     </ClInclude>
@@ -83,6 +82,43 @@
       <Filter>03. Jobber</Filter>
     </ClInclude>
     <ClInclude Include="Sink.h">
+      <Filter>03. Jobber</Filter>
+    </ClInclude>
+    <ClInclude Include="Pass.h">
+      <Filter>03. Jobber</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>05. Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="BindingPass.h">
+      <Filter>03. Jobber</Filter>
+    </ClInclude>
+    <ClInclude Include="windows.h">
+      <Filter>99. Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="GameProcess.h" />
+    <ClInclude Include="pch.h">
+      <Filter>99. Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="IDrawable.h">
+      <Filter>04. Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Vertex.h">
+      <Filter>02. Bindable\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="Topology.h">
+      <Filter>02. Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="InputLayout.h">
+      <Filter>02. Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderQueuePass.h">
+      <Filter>03. Jobber</Filter>
+    </ClInclude>
+    <ClInclude Include="Job.h">
+      <Filter>03. Jobber</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderGraph.h">
       <Filter>03. Jobber</Filter>
     </ClInclude>
   </ItemGroup>
@@ -131,6 +167,39 @@
       <Filter>03. Jobber</Filter>
     </ClCompile>
     <ClCompile Include="Sink.cpp">
+      <Filter>03. Jobber</Filter>
+    </ClCompile>
+    <ClCompile Include="Pass.cpp">
+      <Filter>03. Jobber</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>05. Helper</Filter>
+    </ClCompile>
+    <ClCompile Include="BindingPass.cpp">
+      <Filter>03. Jobber</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>99. Headers</Filter>
+    </ClCompile>
+    <ClCompile Include="IDrawable.cpp">
+      <Filter>04. Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Vertex.cpp">
+      <Filter>02. Bindable\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="Topology.cpp">
+      <Filter>02. Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="InputLayout.cpp">
+      <Filter>02. Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderQueuePass.cpp">
+      <Filter>03. Jobber</Filter>
+    </ClCompile>
+    <ClCompile Include="Job.cpp">
+      <Filter>03. Jobber</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderGraph.cpp">
       <Filter>03. Jobber</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,8 +1,5 @@
 #pragma once
 
-#include <vector>
-#include <directxtk/SimpleMath.h>
-
 enum class KEY_STATE
 {
 	NONE,

@@ -2,8 +2,6 @@
 
 #include "IBindable.h"
 
-#include "STLHeaders.h"
-
 class FlatGraphics;
 
 class ResourceManager

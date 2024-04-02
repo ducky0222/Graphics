@@ -3,9 +3,6 @@
 #include "IBindable.h"
 #include "ResourceManager.h"
 
-#include "STLHeaders.h"
-#include "DirectXHeaders.h"
-
 class FlatGraphics;
 
 class IndexBuffer : public IBindable
@@ -15,7 +12,7 @@ public:
 	IndexBuffer(FlatGraphics& graphics, std::string tag, const std::vector<unsigned>& indices);
 	~IndexBuffer() = default;
 
-	static std::shared_ptr<IndexBuffer> Create(FlatGraphics& graphics, const std::string& tag, const vector<unsigned>& indices);
+	static std::shared_ptr<IndexBuffer> Create(FlatGraphics& graphics, const std::string& tag, const std::vector<unsigned>& indices);
 	template<typename... Ignore>
 	static std::string GenerateUID(const std::string& tag, Ignore&... ignore);
 

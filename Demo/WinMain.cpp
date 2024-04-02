@@ -1,5 +1,7 @@
-#include "WindowsHeader.h"
 #include "../Graphics/GameProcess.h"
+//#include "WindowsHeader.h"
+
+#include <windows.h>
 
 // 전역 변수
 HWND g_hWnd = nullptr;

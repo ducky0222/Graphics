@@ -3,8 +3,6 @@
 #include "IBindable.h"
 #include "BufferResource.h"
 
-#include "DirectXHeaders.h"
-
 class FlatGraphics;
 class RenderTarget;
 

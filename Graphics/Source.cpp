@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Source.h"
 
 std::shared_ptr<IBindable> Source::YieldBindable()
