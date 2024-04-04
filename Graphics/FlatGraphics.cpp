@@ -4,8 +4,6 @@
 #include "DepthStencil.h"
 #include "Camera.h"
 
-#include "ImGuiRelatives.h"
-
 void FlatGraphics::Initialize(HWND hWnd, unsigned width, unsigned height, bool useImgui)
 {
 	m_width = width;
@@ -104,11 +102,9 @@ void FlatGraphics::Initialize(HWND hWnd, unsigned width, unsigned height, bool u
 		ImGui_ImplWin32_Init(hWnd);
 		ImGui_ImplDX11_Init(m_device.get(), m_context.get());
 	}
-
-	m_camera = std::make_unique<Camera>();
 }
 
-void FlatGraphics::Finalize()
+void FlatGraphics::Finalize() const
 {
 	if (m_useImGui)
 	{
@@ -148,10 +144,8 @@ void FlatGraphics::OnResize(unsigned width, unsigned height)
 	m_context->RSSetViewports(1, &vp);
 }
 
-void FlatGraphics::BeginRender()
+void FlatGraphics::BeginFrame() const
 {
-	m_camera->UpdateViewMatrix();
-
 	if (m_useImGui)
 	{
 		ImGui_ImplDX11_NewFrame();
@@ -165,7 +159,7 @@ void FlatGraphics::DrawIndexed(unsigned count)
 	m_context->DrawIndexed(count, 0, 0);
 }
 
-void FlatGraphics::EndRender()
+void FlatGraphics::EndFrame()
 {
 	if (m_useImGui)
 	{
@@ -174,7 +168,5 @@ void FlatGraphics::EndRender()
 	}
 
 	m_swapChain->Present(1, 0);
-
-	/// TODO RenderGraph, models reset
 }
 

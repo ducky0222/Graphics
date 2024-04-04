@@ -11,6 +11,7 @@
 #include <typeinfo>
 #include <optional>
 #include <filesystem>
+#include <map>
 
 /// Windows
 #define WIN32_LEAN_AND_MEAN

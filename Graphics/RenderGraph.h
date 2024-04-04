@@ -28,6 +28,8 @@ protected:
 
 	void setSinkTarget(const std::string& sinkName, const std::string& target);
 
+	Pass* findPassByNameOrNull(const std::string& name);
+
 private:
 	void linkSinks(Pass& pass);
 	void linkGlobalSinks();

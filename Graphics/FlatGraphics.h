@@ -16,13 +16,13 @@ public:
 	FlatGraphics& operator=(const FlatGraphics&) = delete;
 
 	void Initialize(HWND hWnd, unsigned width, unsigned height, bool useImgui);
-	void Finalize();
+	void Finalize() const;
 
 	void OnResize(unsigned width, unsigned height);
 
-	void BeginRender();
+	void BeginFrame() const;
 	void DrawIndexed(unsigned count);
-	void EndRender();
+	void EndFrame();
 
 	/// Getter Setter
 	unsigned GetWidth() const { return m_width; }
@@ -38,8 +38,6 @@ public:
 	std::shared_ptr<DepthStencil> GetDepthStencil() const { return m_depthStencil; }
 
 private:
-	/// TODO Camera Ãß°¡
-
 	winrt::com_ptr<ID3D11Device> m_device = nullptr;
 	winrt::com_ptr<ID3D11DeviceContext> m_context = nullptr;
 	winrt::com_ptr<IDXGISwapChain> m_swapChain = nullptr;
