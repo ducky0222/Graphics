@@ -25,5 +25,17 @@ public:
 		SplitStringIter(str, delim, std::back_inserter(strings));
 		return strings;
 	}
+
+	static std::wstring ToWide(const std::string& str)
+	{
+		int num_chars = MultiByteToWideChar(CP_UTF8, 0, str.c_str(), static_cast<int>(str.length()), NULL, 0);
+		std::wstring wstrTo;
+		if (num_chars)
+		{
+			wstrTo.resize(num_chars);
+			MultiByteToWideChar(CP_UTF8, 0, str.c_str(), static_cast<int>(str.length()), &wstrTo[0], num_chars);
+		}
+		return wstrTo;
+	}
 };
 

@@ -163,6 +163,12 @@
     <ClInclude Include="Texture.h">
       <Filter>02. Bindable</Filter>
     </ClInclude>
+    <ClInclude Include="Surface.h">
+      <Filter>05. Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>04. Model</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TimeManager.cpp">
@@ -285,6 +291,12 @@
     </ClCompile>
     <ClCompile Include="Texture.cpp">
       <Filter>02. Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="Surface.cpp">
+      <Filter>05. Helper</Filter>
+    </ClCompile>
+    <ClCompile Include="Node.cpp">
+      <Filter>04. Model</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

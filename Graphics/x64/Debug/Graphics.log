@@ -1,5 +1,3 @@
-﻿  IDrawable.cpp
-  BufferClearPass.cpp
-  ForwardRenderGraph.cpp
-  ForwarRenderPass.cpp
-  Model.cpp
+﻿  Material.cpp
+  IRenderer.cpp
+  Surface.cpp

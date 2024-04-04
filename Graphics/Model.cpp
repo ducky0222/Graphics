@@ -21,8 +21,27 @@ Model::Model(FlatGraphics& graphics, const std::string& pathString)
 	std::vector<Material> materials;
 	materials.reserve(scene->mNumMaterials);
 
-	for(unsigned i=0;i<scene->mNumMaterials;i++)
-		//materials.emplace_back(Material(graphics, ))
+	for (unsigned i = 0; i < scene->mNumMaterials; i++)
+		materials.emplace_back(Material(graphics, pathString, *scene->mMaterials[i]));
+
+	DirectX::SimpleMath::Vector3 min;
+	DirectX::SimpleMath::Vector3 max;
+
+	// 매쉬 생성
+	for (unsigned i = 0; i < scene->mNumMeshes; i++)
+	{
+		aiMesh& mesh = *scene->mMeshes[i];
+		unsigned materialIndex = mesh.mMaterialIndex;
+		Material& material = materials[mesh.mMaterialIndex];
+
+		DirectX::SimpleMath::Vector3 meshMin = { mesh.mAABB.mMin.x, mesh.mAABB.mMin.y, mesh.mAABB.mMin.z };
+		DirectX::SimpleMath::Vector3 meshMax = { mesh.mAABB.mMax.x,  mesh.mAABB.mMax.y,  mesh.mAABB.mMax.z };
+
+		min = DirectX::SimpleMath::Vector3::Min(min, meshMin);
+		max = DirectX::SimpleMath::Vector3::Min(min, meshMax);
+
+		m_meshes.push_back(std::make_unique<Mesh>(graphics, mesh, material));
+	}
 }
 
 void Model::LinkTechniques(RenderGraph& renderGraph)

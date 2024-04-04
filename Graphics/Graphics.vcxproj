@@ -42,6 +42,7 @@
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="ModelTypes.h" />
+    <ClInclude Include="Node.h" />
     <ClInclude Include="Pass.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="RasterizerState.h" />
@@ -55,6 +56,7 @@
     <ClInclude Include="Source.h" />
     <ClInclude Include="StencilState.h" />
     <ClInclude Include="Step.h" />
+    <ClInclude Include="Surface.h" />
     <ClInclude Include="Technique.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TimeManager.h" />
@@ -87,6 +89,7 @@
     <ClCompile Include="Material.cpp" />
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="Model.cpp" />
+    <ClCompile Include="Node.cpp" />
     <ClCompile Include="Pass.cpp" />
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="RasterizerState.cpp" />
@@ -100,6 +103,7 @@
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="StencilState.cpp" />
     <ClCompile Include="Step.cpp" />
+    <ClCompile Include="Surface.cpp" />
     <ClCompile Include="Technique.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TimeManager.cpp" />
