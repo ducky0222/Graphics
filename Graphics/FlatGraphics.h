@@ -37,6 +37,12 @@ public:
 	std::shared_ptr<RenderTarget> GetBackBuffer() const { return m_backBuffer; }
 	std::shared_ptr<DepthStencil> GetDepthStencil() const { return m_depthStencil; }
 
+	DirectX::SimpleMath::Matrix GetProjection() const { return m_projection; }
+	void SetProjection(DirectX::SimpleMath::Matrix val) { m_projection = val; }
+	DirectX::SimpleMath::Matrix GetView() const { return m_view; }
+	void SetView(DirectX::SimpleMath::Matrix val) { m_view = val; }
+	DirectX::SimpleMath::Matrix GetViewProjection() const { return m_view * m_projection; }
+
 private:
 	winrt::com_ptr<ID3D11Device> m_device = nullptr;
 	winrt::com_ptr<ID3D11DeviceContext> m_context = nullptr;
@@ -52,6 +58,8 @@ private:
 
 	bool m_useImGui = true;
 
-	std::unique_ptr<Camera> m_camera = nullptr;
+	DirectX::SimpleMath::Matrix m_projection;
+	DirectX::SimpleMath::Matrix m_view;
+
 };
 

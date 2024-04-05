@@ -1,6 +1,7 @@
 #pragma once
 
 #include "FlatGraphics.h"
+#include "DynamicConstant.h"
 
 #define DVTX_ELEMENT_AI_EXTRACTOR(member) static SysType Extract( const aiMesh& mesh,size_t i )  { return *reinterpret_cast<const SysType*>(&mesh.member[i]); }
 
@@ -256,7 +257,7 @@ namespace Dvtx
 		}
 	protected:
 		Vertex(char* pData, const VertexLayout& layout);
-	private:
+	public:
 		// enables parameter pack setting of multiple parameters by element index
 		template<typename First, typename ...Rest>
 		void SetAttributeByIndex(size_t i, First&& first, Rest&&... rest)

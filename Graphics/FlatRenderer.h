@@ -1,6 +1,10 @@
 #pragma once
 
 #include "IRenderer.h"
+#include "FlatGraphics.h"
+#include "Camera.h"
+#include "Model.h"
+#include "ForwardRenderGraph.h"
 
 class FlatRenderer : public IRenderer
 {
@@ -17,6 +21,18 @@ public:
 	void BeginRender() override;
 	void Excute() override;
 	void EndRender() override;
-	void Submit() override;
+	bool Submit(ModelType type, std::string key) override;
+	bool Create(ModelType type, std::string key, std::string path) override;
+
+	Camera* GetCamera() { return m_camera.get(); }
+
+private:
+	bool createModel(std::string key, std::string path);
+
+private:
+	std::unique_ptr<FlatGraphics> m_graphics = nullptr;
+	std::unique_ptr<ForwardRenderGraph> m_renderGraph = nullptr;
+	std::map<std::string, std::unique_ptr<Model>> m_models;
+	std::unique_ptr<Camera> m_camera = nullptr;
 };
 

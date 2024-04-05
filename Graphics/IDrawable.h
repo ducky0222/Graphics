@@ -49,14 +49,15 @@ public:
 
 	unsigned GetIndexCount() const;
 
+	DrawableType GetDrawableType() const { return m_drawableType; }
 protected:
 	mutable DirectX::SimpleMath::Matrix m_transform;
 	mutable DirectX::SimpleMath::Matrix m_texTransform;
 	mutable AlphaData m_alphaData = {};
 
 	const DrawableType m_drawableType;
-	std::shared_ptr<IndexBuffer> m_indices;
-	std::shared_ptr<VertexBuffer> m_vertices;
+	std::shared_ptr<IndexBuffer> m_pIndices;
+	std::shared_ptr<VertexBuffer> m_pVertices;
 	std::shared_ptr<Topology> m_topology;
 	std::map<std::string, Technique> m_techniques;
 };

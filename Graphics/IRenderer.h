@@ -1,5 +1,9 @@
 #pragma once
 
+#include "ModelTypes.h"
+
+#include <string>
+
 #ifdef FLATGRAPHICS
 #define FLATGRAPHICS __declspec(dllexport)
 #else
@@ -22,7 +26,8 @@ extern "C"
 		virtual void FLATGRAPHICS Excute() abstract;
 		virtual void FLATGRAPHICS EndRender() abstract;
 
-		virtual void FLATGRAPHICS Submit() abstract;
+		virtual bool FLATGRAPHICS Submit(ModelType type, std::string key) abstract;
+		virtual bool FLATGRAPHICS Create(ModelType type, std::string key, std::string path) abstract;
 
 	};
 

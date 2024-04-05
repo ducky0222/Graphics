@@ -19,8 +19,8 @@ void IDrawable::Submit()
 void IDrawable::Bind(FlatGraphics& graphics) const
 {
 	m_topology->Bind(graphics);
-	m_indices->Bind(graphics);
-	m_vertices->Bind(graphics);
+	m_pIndices->Bind(graphics);
+	m_pVertices->Bind(graphics);
 }
 
 void IDrawable::LinkTechniques(RenderGraph& renderGraph)
@@ -37,5 +37,5 @@ void IDrawable::AddTechnique(Technique technique)
 
 unsigned IDrawable::GetIndexCount() const
 {
-	return m_indices->GetCount();
+	return m_pIndices->GetCount();
 }

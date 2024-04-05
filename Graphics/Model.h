@@ -2,6 +2,7 @@
 
 #include "FlatGraphics.h"
 #include "Mesh.h"
+#include "Node.h"
 
 class RenderGraph;
 class Job;
@@ -26,11 +27,16 @@ public:
 	void SetAlphaData(IDrawable::AlphaData val) { m_alphaData = val; }
 
 	const std::vector<std::unique_ptr<Mesh>>& GetMeshes() const { return m_meshes; }
+
+private:
+	std::unique_ptr<Node> parseNodeRecursive(int& nextId, const aiNode& node);
+
 private:
 	mutable DirectX::SimpleMath::Matrix m_transform;
 	mutable DirectX::SimpleMath::Matrix m_texTransform;
 	mutable IDrawable::AlphaData m_alphaData = {};
 
+	std::unique_ptr<Node> m_root = nullptr;
 	std::vector<std::unique_ptr<Mesh>> m_meshes;
 };
 

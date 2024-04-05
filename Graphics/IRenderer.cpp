@@ -13,6 +13,7 @@ FLATGRAPHICS IRenderer* Exporter::GetRenderer()
 
 FLATGRAPHICS void Exporter::DeleteRenderer()
 {
+	m_renderer->Destroy();
 	delete m_renderer;
 }
 

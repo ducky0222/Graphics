@@ -37,6 +37,12 @@
     <Filter Include="03. Jobber\RenderGraph">
       <UniqueIdentifier>{1e35a35e-f6c7-477e-bb24-caa3af4dab34}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02. Bindable\Buffer\CBuf">
+      <UniqueIdentifier>{457156e0-2777-4973-bcc1-e8ae723c2be8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Bindable\Shader\HLSL">
+      <UniqueIdentifier>{9d041672-e61a-43a8-afe8-4e089bbd256e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TimeManager.h">
@@ -73,9 +79,6 @@
       <Filter>01. Managers</Filter>
     </ClInclude>
     <ClInclude Include="IndexBuffer.h">
-      <Filter>02. Bindable\Buffer</Filter>
-    </ClInclude>
-    <ClInclude Include="ConstantBuffer.h">
       <Filter>02. Bindable\Buffer</Filter>
     </ClInclude>
     <ClInclude Include="Source.h">
@@ -169,6 +172,27 @@
     <ClInclude Include="Node.h">
       <Filter>04. Model</Filter>
     </ClInclude>
+    <ClInclude Include="VertexShader.h">
+      <Filter>02. Bindable\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstantBuffer.h">
+      <Filter>02. Bindable\Buffer\CBuf</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformCBuf.h">
+      <Filter>02. Bindable\Buffer\CBuf</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicConstant.h">
+      <Filter>02. Bindable\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="LayoutCodex.h">
+      <Filter>02. Bindable\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="PixelShader.h">
+      <Filter>02. Bindable\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Sampler.h">
+      <Filter>02. Bindable</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TimeManager.cpp">
@@ -206,9 +230,6 @@
     </ClCompile>
     <ClCompile Include="GameProcess.cpp" />
     <ClCompile Include="IndexBuffer.cpp">
-      <Filter>02. Bindable\Buffer</Filter>
-    </ClCompile>
-    <ClCompile Include="ConstantBuffer.cpp">
       <Filter>02. Bindable\Buffer</Filter>
     </ClCompile>
     <ClCompile Include="Source.cpp">
@@ -298,5 +319,31 @@
     <ClCompile Include="Node.cpp">
       <Filter>04. Model</Filter>
     </ClCompile>
+    <ClCompile Include="VertexShader.cpp">
+      <Filter>02. Bindable\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstantBuffer.cpp">
+      <Filter>02. Bindable\Buffer\CBuf</Filter>
+    </ClCompile>
+    <ClCompile Include="TransformCBuf.cpp">
+      <Filter>02. Bindable\Buffer\CBuf</Filter>
+    </ClCompile>
+    <ClCompile Include="DynamicConstant.cpp">
+      <Filter>02. Bindable\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="LayoutCodex.cpp">
+      <Filter>02. Bindable\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="PixelShader.cpp">
+      <Filter>02. Bindable\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Sampler.cpp">
+      <Filter>02. Bindable</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="..\Resources\Shaders\Model_VS.hlsl">
+      <Filter>02. Bindable\Shader\HLSL</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>

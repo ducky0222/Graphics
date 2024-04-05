@@ -46,15 +46,40 @@ Model::Model(FlatGraphics& graphics, const std::string& pathString)
 
 void Model::LinkTechniques(RenderGraph& renderGraph)
 {
-
+	for (auto& mesh : m_meshes)
+		mesh->LinkTechniques(renderGraph);
 }
 
 void Model::Submit()
 {
-
+	m_root->Submit(m_transform, m_texTransform, m_alphaData);
 }
 
 void Model::Reset()
 {
+	for (auto& mesh : m_meshes)
+		mesh->Reset();
+}
 
+std::unique_ptr<Node> Model::parseNodeRecursive(int& nextId, const aiNode& node)
+{
+	DirectX::SimpleMath::Matrix transform = (reinterpret_cast<const DirectX::SimpleMath::Matrix*>(&node.mTransformation)->Transpose());
+
+	std::vector<Mesh*> meshes;
+	meshes.reserve(node.mNumMeshes);
+
+	for (unsigned i = 0; i < node.mNumMeshes; i++)
+	{
+		const unsigned MESH_INDEX = node.mMeshes[i];
+		Mesh* mesh = m_meshes[MESH_INDEX].get();
+
+		m_meshes.emplace_back(mesh);
+	}
+
+	auto pNode = std::make_unique<Node>(nextId++, node.mName.C_Str(), std::move(meshes), transform);
+
+	for (unsigned i = 0; i < node.mNumChildren; i++)
+		pNode->addChild(parseNodeRecursive(nextId, *node.mChildren[i]));
+
+	return pNode;
 }
