@@ -3,7 +3,7 @@
 #include "Utils.h"
 
 Pass::Pass(std::string name)
-	: m_name(name)
+	: m_name(std::move(name))
 {
 
 }
@@ -20,12 +20,15 @@ void Pass::Finalize()
 
 void Pass::SetSinkLinkage(const std::string& registeredName, const std::string& target)
 {
+	// 패스 생성 시 등록해둔 이름으로 싱크를 찾음
 	auto& sink = GetSink(registeredName);
 
 	std::vector<std::string> targetSplit = Utils::SplitString(target, ".");
+	// 포맷 체크, 항상 "<이전버퍼 혹은 전역>.<target Name>"
 	if (targetSplit.size() != 2)
 		assert(false);
 
+	// 이름의 유효성을 체크한 후 설정해준다.
 	sink.SetTarget(targetSplit[0], std::move(targetSplit[1]));
 }
 

@@ -21,8 +21,8 @@ Sink::Sink(std::string registeredName)
 
 void Sink::SetTarget(const std::string& passName, const std::string& outputName)
 {
-	assert(!m_passName.empty());
-	assert(!m_outputName.empty());
+	assert(!passName.empty());
+	assert(!outputName.empty());
 
 	{
 		// 패스 네임 유효성 체크

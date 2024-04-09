@@ -3,6 +3,15 @@
   <ProjectOutputs />
   <ContentFiles>
     <ContentFile>
+      <FullPath>E:\Main\NonSVN\VSSolutions\D3DGraphics\x64\Debug\Fullscreen_PS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>E:\Main\NonSVN\VSSolutions\D3DGraphics\x64\Debug\Fullscreen_VS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>E:\Main\NonSVN\VSSolutions\D3DGraphics\x64\Debug\Model_PS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
       <FullPath>E:\Main\NonSVN\VSSolutions\D3DGraphics\x64\Debug\Model_VS.cso</FullPath>
     </ContentFile>
   </ContentFiles>

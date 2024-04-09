@@ -9,15 +9,36 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="01. Process">
+      <UniqueIdentifier>{57497c0e-a6b2-41fe-9d83-0a17f7045097}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WindowsHeader.h">
       <Filter>99. Headers</Filter>
     </ClInclude>
+    <ClInclude Include="GameProcess.h">
+      <Filter>01. Process</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>01. Process</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeManager.h">
+      <Filter>01. Process</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinMain.cpp">
       <Filter>00. EntryPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="GameProcess.cpp">
+      <Filter>01. Process</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>01. Process</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeManager.cpp">
+      <Filter>01. Process</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

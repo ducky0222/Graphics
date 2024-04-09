@@ -5,10 +5,11 @@
 void FlatRenderer::Initialize(int hWnd, unsigned width, unsigned height, bool useImGUI)
 {
 	m_graphics = std::make_unique<FlatGraphics>();
+	m_graphics->Initialize(reinterpret_cast<HWND>(hWnd), width, height, useImGUI);
+
 	m_renderGraph = std::make_unique<ForwardRenderGraph>(*m_graphics);
 	m_camera = std::make_unique<Camera>();
 
-	m_graphics->Initialize(reinterpret_cast<HWND>(hWnd), width, height, useImGUI);
 }
 
 void FlatRenderer::Destroy()
@@ -30,6 +31,9 @@ void FlatRenderer::OnResize(unsigned width, unsigned height)
 void FlatRenderer::BeginRender()
 {
 	m_camera->UpdateViewMatrix();
+	m_graphics->SetView(m_camera->GetView());
+	m_graphics->SetProjection(m_camera->GetProjection());
+	m_graphics->BeginFrame();
 }
 
 void FlatRenderer::Excute()
@@ -109,4 +113,6 @@ bool FlatRenderer::createModel(std::string key, std::string path)
 
 	m_models.insert({ key, std::make_unique<Model>(*m_graphics, path) });
 	m_models[key]->LinkTechniques(*m_renderGraph);
+
+	return true;
 }

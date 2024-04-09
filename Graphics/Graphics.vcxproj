@@ -30,13 +30,12 @@
     <ClInclude Include="FlatRenderer.h" />
     <ClInclude Include="ForwardRenderGraph.h" />
     <ClInclude Include="ForwarRenderPass.h" />
-    <ClInclude Include="GameProcess.h" />
+    <ClInclude Include="FullScreenPass.h" />
     <ClInclude Include="GraphicsResource.h" />
     <ClInclude Include="IBindable.h" />
     <ClInclude Include="IDrawable.h" />
     <ClInclude Include="IndexBuffer.h" />
     <ClInclude Include="InputLayout.h" />
-    <ClInclude Include="InputManager.h" />
     <ClInclude Include="IRenderer.h" />
     <ClInclude Include="Job.h" />
     <ClInclude Include="LayoutCodex.h" />
@@ -45,16 +44,16 @@
     <ClInclude Include="Model.h" />
     <ClInclude Include="ModelTypes.h" />
     <ClInclude Include="Node.h" />
+    <ClInclude Include="OffScreenMappingPass.h" />
     <ClInclude Include="Pass.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="PixelCBufAlpha.h" />
     <ClInclude Include="PixelShader.h" />
     <ClInclude Include="RasterizerState.h" />
     <ClInclude Include="RenderGraph.h" />
     <ClInclude Include="RenderQueuePass.h" />
     <ClInclude Include="RenderTarget.h" />
-    <ClInclude Include="ResourceManager.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-    </ClInclude>
+    <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Sampler.h" />
     <ClInclude Include="Sink.h" />
     <ClInclude Include="Source.h" />
@@ -63,7 +62,6 @@
     <ClInclude Include="Surface.h" />
     <ClInclude Include="Technique.h" />
     <ClInclude Include="Texture.h" />
-    <ClInclude Include="TimeManager.h" />
     <ClInclude Include="Topology.h" />
     <ClInclude Include="TransformCBuf.h" />
     <ClInclude Include="Utils.h" />
@@ -84,13 +82,12 @@
     <ClCompile Include="FlatRenderer.cpp" />
     <ClCompile Include="ForwardRenderGraph.cpp" />
     <ClCompile Include="ForwarRenderPass.cpp" />
-    <ClCompile Include="GameProcess.cpp" />
+    <ClCompile Include="FullScreenPass.cpp" />
     <ClCompile Include="GraphicsResource.cpp" />
     <ClCompile Include="IBindable.cpp" />
     <ClCompile Include="IDrawable.cpp" />
     <ClCompile Include="IndexBuffer.cpp" />
     <ClCompile Include="InputLayout.cpp" />
-    <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="IRenderer.cpp" />
     <ClCompile Include="Job.cpp" />
     <ClCompile Include="LayoutCodex.cpp" />
@@ -98,16 +95,16 @@
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="Node.cpp" />
+    <ClCompile Include="OffScreenMappingPass.cpp" />
     <ClCompile Include="Pass.cpp" />
     <ClCompile Include="pch.cpp" />
+    <ClCompile Include="PixelCBufAlpha.cpp" />
     <ClCompile Include="PixelShader.cpp" />
     <ClCompile Include="RasterizerState.cpp" />
     <ClCompile Include="RenderGraph.cpp" />
     <ClCompile Include="RenderQueuePass.cpp" />
     <ClCompile Include="RenderTarget.cpp" />
-    <ClCompile Include="ResourceManager.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-    </ClCompile>
+    <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="Sampler.cpp" />
     <ClCompile Include="Sink.cpp" />
     <ClCompile Include="Source.cpp" />
@@ -116,7 +113,6 @@
     <ClCompile Include="Surface.cpp" />
     <ClCompile Include="Technique.cpp" />
     <ClCompile Include="Texture.cpp" />
-    <ClCompile Include="TimeManager.cpp" />
     <ClCompile Include="Topology.cpp" />
     <ClCompile Include="TransformCBuf.cpp" />
     <ClCompile Include="Utils.cpp" />
@@ -126,10 +122,25 @@
     <ClCompile Include="Viewport.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <FxCompile Include="..\Resources\Shaders\Fullscreen_PS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="..\Resources\Shaders\Fullscreen_VS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="..\Resources\Shaders\Model_PS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+    </FxCompile>
     <FxCompile Include="..\Resources\Shaders\Model_VS.hlsl">
       <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
     </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Resources\Shaders\LightHelper.hlsli" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

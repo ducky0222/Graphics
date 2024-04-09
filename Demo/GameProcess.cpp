@@ -3,6 +3,7 @@
 #include "FlatGraphics.h"
 #include "TimeManager.h"
 #include "InputManager.h"
+#include "FlatRenderer.h"
 
 extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
@@ -37,8 +38,11 @@ HRESULT GameProcess::Initialize(HINSTANCE hInstance)
 	}
 
 	/// Graphics
-	m_flatGraphics = new FlatGraphics;
-	m_flatGraphics->Initialize(m_hWnd, m_screenWidth, m_screenHeight, false);
+	//m_flatGraphics = new FlatGraphics;
+	//m_flatGraphics->Initialize(m_hWnd, m_screenWidth, m_screenHeight, false);
+
+	m_renderer = new FlatRenderer;
+	m_renderer->Initialize((int)m_hWnd, m_screenWidth, m_screenHeight, false);
 
 	// 윈도우를 화면에 띄운다 / 갱신한다
 	ShowWindow(m_hWnd, SW_SHOWNORMAL);
@@ -53,6 +57,8 @@ HRESULT GameProcess::Initialize(HINSTANCE hInstance)
 
 	m_inputManager = new InputManager;
 	m_inputManager->Initialize();
+
+	m_renderer->Create(ModelType::BASIC, "TileF", "../Resources/Model/TileF.fbx");
 
 	return S_OK;
 }
@@ -78,11 +84,13 @@ void GameProcess::Loop()
 
 void GameProcess::Finalize()
 {
-	m_flatGraphics->Finalize();
+	//m_flatGraphics->Finalize();
+	m_renderer->Destroy();
 
-	delete m_flatGraphics;
-	delete m_inputManager;
 	delete m_timeManager;
+	delete m_inputManager;
+	delete m_renderer;
+	//delete m_flatGraphics;
 }
 
 void GameProcess::updateAll()
@@ -94,7 +102,9 @@ void GameProcess::updateAll()
 
 void GameProcess::renderAll()
 {
-
+	m_renderer->BeginRender();
+	m_renderer->Excute();
+	m_renderer->EndRender();
 }
 
 void GameProcess::recalcWindowSize()

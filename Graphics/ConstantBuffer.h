@@ -82,7 +82,7 @@ public:
 
 	virtual void Bind(FlatGraphics& graphics) override;
 
-	std::string GetUID() const override;		
+	std::string GetUID() const override;
 };
 
 #pragma region VertexConstantBufferFunc
@@ -124,7 +124,60 @@ std::shared_ptr<VertexConstantBuffer<T>> VertexConstantBuffer<T>::Create(FlatGra
 }
 #pragma	endregion
 
+template<typename T>
+class PixelConstantBuffer : public ConstantBuffer<T>
+{
+	using ConstantBuffer<T>::ConstantBuffer;
+	using ConstantBuffer<T>::m_constantBuffer;
+	using ConstantBuffer<T>::m_slot;
+	using IBindable::GetContext;
+
+public:
+	static std::shared_ptr<PixelConstantBuffer<T>> Create(FlatGraphics& graphics, const T& consts, unsigned slot = 0);
+	static std::shared_ptr<PixelConstantBuffer<T>> Create(FlatGraphics& graphics, unsigned slot = 0);
+	static std::string GenerateUID(const T&, unsigned slot);
+	static std::string GenerateUID(unsigned slot = 0);
+
+	virtual void Bind(FlatGraphics& graphics) override;
+
+	std::string GetUID() const override;
+};
 
 #pragma region PixelConstantBufferFunc
+template<typename T>
+std::string PixelConstantBuffer<T>::GetUID() const
+{
+	return GenerateUID(m_slot);
+}
 
+template<typename T>
+void PixelConstantBuffer<T>::Bind(FlatGraphics& graphics)
+{
+	GetContext(graphics)->PSSetConstantBuffers(m_slot, 1, m_constantBuffer.put());
+}
+
+template<typename T>
+std::string PixelConstantBuffer<T>::GenerateUID(unsigned slot /*= 0*/)
+{
+	using namespace std::string_literals;
+	return typeid(PixelConstantBuffer).name() + "#"s + std::to_string(slot);
+}
+
+template<typename T>
+std::string PixelConstantBuffer<T>::GenerateUID(const T&, unsigned slot)
+{
+	return GenerateUID(slot);
+}
+
+template<typename T>
+std::shared_ptr<PixelConstantBuffer<T>> PixelConstantBuffer<T>::Create(FlatGraphics& graphics, unsigned slot /*= 0*/)
+{
+	return ResourceManager::Create<PixelConstantBuffer>(graphics, slot);
+}
+
+template<typename T>
+std::shared_ptr<PixelConstantBuffer<T>> PixelConstantBuffer<T>::Create(FlatGraphics& graphics, const T& consts, unsigned slot /*= 0*/)
+{
+	return ResourceManager::Create<PixelConstantBuffer>(graphics, consts, slot);
+}
 #pragma	endregion

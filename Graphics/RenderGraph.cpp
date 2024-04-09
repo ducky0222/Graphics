@@ -53,8 +53,6 @@ RenderQueuePass& RenderGraph::GetRenderQueue(const std::string& passName)
 		assert(false);
 	}
 	assert(false);
-
-
 }
 
 void RenderGraph::finalize()

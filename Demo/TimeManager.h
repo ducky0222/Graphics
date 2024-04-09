@@ -1,5 +1,6 @@
 #pragma once
 
+#include "WindowsHeader.h"
 #include <stdint.h>
 
 class TimeManager

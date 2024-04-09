@@ -1,5 +1,8 @@
 #pragma once
 
+#include "WindowsHeader.h"
+
+class IRenderer;
 class FlatGraphics;
 class InputManager;
 class TimeManager;
@@ -38,6 +41,7 @@ private:
 
 	/// Graphics
 	FlatGraphics* m_flatGraphics = nullptr;
+	IRenderer* m_renderer = nullptr;
 
 	/// Managers
 	TimeManager* m_timeManager = nullptr;

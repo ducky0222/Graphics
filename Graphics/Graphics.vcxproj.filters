@@ -7,50 +7,41 @@
     <Filter Include="99. Headers">
       <UniqueIdentifier>{74c32cc6-aa83-4152-9073-ce990e46ba87}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02. Bindable">
+    <Filter Include="01. Bindable">
       <UniqueIdentifier>{82678093-7a3f-46be-89a4-5c15bfbc33a5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Jobber">
-      <UniqueIdentifier>{f66c289b-118d-488f-bb94-1f3c8e2976b9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="04. Model">
-      <UniqueIdentifier>{ee767756-961f-484e-9145-4d90962eb2df}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="05. Helper">
-      <UniqueIdentifier>{a2488afa-3935-4eba-9c7f-52d41f6ab769}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02. Bindable\Shader">
+    <Filter Include="01. Bindable\Shader">
       <UniqueIdentifier>{b614386f-078c-48c1-b0a6-4a9def9dd144}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02. Bindable\Buffer">
+    <Filter Include="01. Bindable\Shader\HLSL">
+      <UniqueIdentifier>{9d041672-e61a-43a8-afe8-4e089bbd256e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Bindable\Buffer">
       <UniqueIdentifier>{c3bf3b51-3129-4c34-b657-8fc662f3baca}</UniqueIdentifier>
     </Filter>
-    <Filter Include="01. Managers">
-      <UniqueIdentifier>{3390a1df-c148-4fe9-96c2-395001a369d0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02. Bindable\State">
-      <UniqueIdentifier>{270b9fb6-cbf9-4488-b526-9814f055d95d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Jobber\Pass">
-      <UniqueIdentifier>{96452af2-7051-409a-8b72-30022a2721de}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Jobber\RenderGraph">
-      <UniqueIdentifier>{1e35a35e-f6c7-477e-bb24-caa3af4dab34}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02. Bindable\Buffer\CBuf">
+    <Filter Include="01. Bindable\Buffer\CBuf">
       <UniqueIdentifier>{457156e0-2777-4973-bcc1-e8ae723c2be8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02. Bindable\Shader\HLSL">
-      <UniqueIdentifier>{9d041672-e61a-43a8-afe8-4e089bbd256e}</UniqueIdentifier>
+    <Filter Include="01. Bindable\State">
+      <UniqueIdentifier>{270b9fb6-cbf9-4488-b526-9814f055d95d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Jobber">
+      <UniqueIdentifier>{f66c289b-118d-488f-bb94-1f3c8e2976b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Jobber\Pass">
+      <UniqueIdentifier>{96452af2-7051-409a-8b72-30022a2721de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Jobber\RenderGraph">
+      <UniqueIdentifier>{1e35a35e-f6c7-477e-bb24-caa3af4dab34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Model">
+      <UniqueIdentifier>{ee767756-961f-484e-9145-4d90962eb2df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04. Helper">
+      <UniqueIdentifier>{a2488afa-3935-4eba-9c7f-52d41f6ab769}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="TimeManager.h">
-      <Filter>01. Managers</Filter>
-    </ClInclude>
-    <ClInclude Include="InputManager.h">
-      <Filter>01. Managers</Filter>
-    </ClInclude>
     <ClInclude Include="FlatGraphics.h">
       <Filter>00. Graphics</Filter>
     </ClInclude>
@@ -58,149 +49,151 @@
       <Filter>00. Graphics</Filter>
     </ClInclude>
     <ClInclude Include="IBindable.h">
-      <Filter>02. Bindable</Filter>
+      <Filter>01. Bindable</Filter>
     </ClInclude>
     <ClInclude Include="BufferResource.h">
-      <Filter>02. Bindable</Filter>
+      <Filter>01. Bindable</Filter>
     </ClInclude>
     <ClInclude Include="RenderTarget.h">
-      <Filter>02. Bindable</Filter>
+      <Filter>01. Bindable</Filter>
     </ClInclude>
     <ClInclude Include="DepthStencil.h">
-      <Filter>02. Bindable</Filter>
+      <Filter>01. Bindable</Filter>
     </ClInclude>
     <ClInclude Include="Camera.h">
-      <Filter>05. Helper</Filter>
+      <Filter>04. Helper</Filter>
     </ClInclude>
     <ClInclude Include="VertexBuffer.h">
-      <Filter>02. Bindable\Buffer</Filter>
-    </ClInclude>
-    <ClInclude Include="ResourceManager.h">
-      <Filter>01. Managers</Filter>
+      <Filter>01. Bindable\Buffer</Filter>
     </ClInclude>
     <ClInclude Include="IndexBuffer.h">
-      <Filter>02. Bindable\Buffer</Filter>
+      <Filter>01. Bindable\Buffer</Filter>
     </ClInclude>
     <ClInclude Include="Source.h">
-      <Filter>03. Jobber</Filter>
+      <Filter>02. Jobber</Filter>
     </ClInclude>
     <ClInclude Include="Sink.h">
-      <Filter>03. Jobber</Filter>
+      <Filter>02. Jobber</Filter>
     </ClInclude>
     <ClInclude Include="Utils.h">
-      <Filter>05. Helper</Filter>
+      <Filter>04. Helper</Filter>
     </ClInclude>
-    <ClInclude Include="GameProcess.h" />
     <ClInclude Include="pch.h">
       <Filter>99. Headers</Filter>
     </ClInclude>
     <ClInclude Include="IDrawable.h">
-      <Filter>04. Model</Filter>
+      <Filter>03. Model</Filter>
     </ClInclude>
     <ClInclude Include="Vertex.h">
-      <Filter>02. Bindable\Buffer</Filter>
+      <Filter>01. Bindable\Buffer</Filter>
     </ClInclude>
     <ClInclude Include="Topology.h">
-      <Filter>02. Bindable</Filter>
+      <Filter>01. Bindable</Filter>
     </ClInclude>
     <ClInclude Include="InputLayout.h">
-      <Filter>02. Bindable</Filter>
+      <Filter>01. Bindable</Filter>
     </ClInclude>
     <ClInclude Include="Job.h">
-      <Filter>03. Jobber</Filter>
+      <Filter>02. Jobber</Filter>
     </ClInclude>
     <ClInclude Include="Step.h">
-      <Filter>03. Jobber</Filter>
+      <Filter>02. Jobber</Filter>
     </ClInclude>
     <ClInclude Include="Technique.h">
-      <Filter>03. Jobber</Filter>
+      <Filter>02. Jobber</Filter>
     </ClInclude>
     <ClInclude Include="Mesh.h">
-      <Filter>04. Model</Filter>
+      <Filter>03. Model</Filter>
     </ClInclude>
     <ClInclude Include="Material.h">
-      <Filter>04. Model</Filter>
+      <Filter>03. Model</Filter>
     </ClInclude>
     <ClInclude Include="Viewport.h">
-      <Filter>02. Bindable</Filter>
+      <Filter>01. Bindable</Filter>
     </ClInclude>
     <ClInclude Include="StencilState.h">
-      <Filter>02. Bindable\State</Filter>
+      <Filter>01. Bindable\State</Filter>
     </ClInclude>
     <ClInclude Include="RasterizerState.h">
-      <Filter>02. Bindable\State</Filter>
+      <Filter>01. Bindable\State</Filter>
     </ClInclude>
     <ClInclude Include="IRenderer.h">
       <Filter>00. Graphics</Filter>
     </ClInclude>
     <ClInclude Include="ModelTypes.h">
-      <Filter>04. Model</Filter>
+      <Filter>03. Model</Filter>
     </ClInclude>
     <ClInclude Include="FlatRenderer.h">
       <Filter>00. Graphics</Filter>
     </ClInclude>
     <ClInclude Include="BindingPass.h">
-      <Filter>03. Jobber\Pass</Filter>
+      <Filter>02. Jobber\Pass</Filter>
     </ClInclude>
     <ClInclude Include="Pass.h">
-      <Filter>03. Jobber\Pass</Filter>
+      <Filter>02. Jobber\Pass</Filter>
     </ClInclude>
     <ClInclude Include="RenderQueuePass.h">
-      <Filter>03. Jobber\Pass</Filter>
+      <Filter>02. Jobber\Pass</Filter>
     </ClInclude>
     <ClInclude Include="RenderGraph.h">
-      <Filter>03. Jobber\RenderGraph</Filter>
+      <Filter>02. Jobber\RenderGraph</Filter>
     </ClInclude>
     <ClInclude Include="ForwardRenderGraph.h">
-      <Filter>03. Jobber\RenderGraph</Filter>
+      <Filter>02. Jobber\RenderGraph</Filter>
     </ClInclude>
     <ClInclude Include="BufferClearPass.h">
-      <Filter>03. Jobber\Pass</Filter>
+      <Filter>02. Jobber\Pass</Filter>
     </ClInclude>
     <ClInclude Include="ForwarRenderPass.h">
-      <Filter>03. Jobber\Pass</Filter>
+      <Filter>02. Jobber\Pass</Filter>
     </ClInclude>
     <ClInclude Include="Model.h">
-      <Filter>04. Model</Filter>
+      <Filter>03. Model</Filter>
     </ClInclude>
     <ClInclude Include="Texture.h">
-      <Filter>02. Bindable</Filter>
+      <Filter>01. Bindable</Filter>
     </ClInclude>
     <ClInclude Include="Surface.h">
-      <Filter>05. Helper</Filter>
+      <Filter>04. Helper</Filter>
     </ClInclude>
     <ClInclude Include="Node.h">
-      <Filter>04. Model</Filter>
+      <Filter>03. Model</Filter>
     </ClInclude>
     <ClInclude Include="VertexShader.h">
-      <Filter>02. Bindable\Shader</Filter>
+      <Filter>01. Bindable\Shader</Filter>
     </ClInclude>
     <ClInclude Include="ConstantBuffer.h">
-      <Filter>02. Bindable\Buffer\CBuf</Filter>
+      <Filter>01. Bindable\Buffer\CBuf</Filter>
     </ClInclude>
     <ClInclude Include="TransformCBuf.h">
-      <Filter>02. Bindable\Buffer\CBuf</Filter>
+      <Filter>01. Bindable\Buffer\CBuf</Filter>
     </ClInclude>
     <ClInclude Include="DynamicConstant.h">
-      <Filter>02. Bindable\Buffer</Filter>
+      <Filter>01. Bindable\Buffer</Filter>
     </ClInclude>
     <ClInclude Include="LayoutCodex.h">
-      <Filter>02. Bindable\Buffer</Filter>
+      <Filter>01. Bindable\Buffer</Filter>
     </ClInclude>
     <ClInclude Include="PixelShader.h">
-      <Filter>02. Bindable\Shader</Filter>
+      <Filter>01. Bindable\Shader</Filter>
     </ClInclude>
     <ClInclude Include="Sampler.h">
-      <Filter>02. Bindable</Filter>
+      <Filter>01. Bindable</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>00. Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="PixelCBufAlpha.h">
+      <Filter>01. Bindable\Buffer\CBuf</Filter>
+    </ClInclude>
+    <ClInclude Include="FullScreenPass.h">
+      <Filter>02. Jobber\Pass</Filter>
+    </ClInclude>
+    <ClInclude Include="OffScreenMappingPass.h">
+      <Filter>02. Jobber\Pass</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="TimeManager.cpp">
-      <Filter>01. Managers</Filter>
-    </ClCompile>
-    <ClCompile Include="InputManager.cpp">
-      <Filter>01. Managers</Filter>
-    </ClCompile>
     <ClCompile Include="FlatGraphics.cpp">
       <Filter>00. Graphics</Filter>
     </ClCompile>
@@ -208,77 +201,73 @@
       <Filter>00. Graphics</Filter>
     </ClCompile>
     <ClCompile Include="IBindable.cpp">
-      <Filter>02. Bindable</Filter>
+      <Filter>01. Bindable</Filter>
     </ClCompile>
     <ClCompile Include="BufferResource.cpp">
-      <Filter>02. Bindable</Filter>
+      <Filter>01. Bindable</Filter>
     </ClCompile>
     <ClCompile Include="RenderTarget.cpp">
-      <Filter>02. Bindable</Filter>
+      <Filter>01. Bindable</Filter>
     </ClCompile>
     <ClCompile Include="DepthStencil.cpp">
-      <Filter>02. Bindable</Filter>
+      <Filter>01. Bindable</Filter>
     </ClCompile>
     <ClCompile Include="Camera.cpp">
-      <Filter>05. Helper</Filter>
+      <Filter>04. Helper</Filter>
     </ClCompile>
     <ClCompile Include="VertexBuffer.cpp">
-      <Filter>02. Bindable\Buffer</Filter>
+      <Filter>01. Bindable\Buffer</Filter>
     </ClCompile>
-    <ClCompile Include="ResourceManager.cpp">
-      <Filter>01. Managers</Filter>
-    </ClCompile>
-    <ClCompile Include="GameProcess.cpp" />
     <ClCompile Include="IndexBuffer.cpp">
-      <Filter>02. Bindable\Buffer</Filter>
+      <Filter>01. Bindable\Buffer</Filter>
     </ClCompile>
     <ClCompile Include="Source.cpp">
-      <Filter>03. Jobber</Filter>
+      <Filter>02. Jobber</Filter>
     </ClCompile>
     <ClCompile Include="Sink.cpp">
-      <Filter>03. Jobber</Filter>
+      <Filter>02. Jobber</Filter>
     </ClCompile>
     <ClCompile Include="Utils.cpp">
-      <Filter>05. Helper</Filter>
+      <Filter>04. Helper</Filter>
     </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>99. Headers</Filter>
     </ClCompile>
     <ClCompile Include="IDrawable.cpp">
-      <Filter>04. Model</Filter>
+      <Filter>03. Model</Filter>
     </ClCompile>
     <ClCompile Include="Vertex.cpp">
-      <Filter>02. Bindable\Buffer</Filter>
+      <Filter>01. Bindable\Buffer</Filter>
     </ClCompile>
     <ClCompile Include="Topology.cpp">
-      <Filter>02. Bindable</Filter>
+      <Filter>01. Bindable</Filter>
     </ClCompile>
     <ClCompile Include="InputLayout.cpp">
-      <Filter>02. Bindable</Filter>
+      <Filter>01. Bindable</Filter>
     </ClCompile>
     <ClCompile Include="Job.cpp">
-      <Filter>03. Jobber</Filter>
+      <Filter>02. Jobber</Filter>
     </ClCompile>
     <ClCompile Include="Step.cpp">
-      <Filter>03. Jobber</Filter>
+      <Filter>02. Jobber</Filter>
     </ClCompile>
     <ClCompile Include="Technique.cpp">
-      <Filter>03. Jobber</Filter>
+      <Filter>02. Jobber</Filter>
     </ClCompile>
     <ClCompile Include="Mesh.cpp">
-      <Filter>04. Model</Filter>
+      <Filter>03. Model</Filter>
     </ClCompile>
     <ClCompile Include="Material.cpp">
-      <Filter>04. Model</Filter>
+      <Filter>03. Model</Filter>
     </ClCompile>
     <ClCompile Include="Viewport.cpp">
-      <Filter>02. Bindable</Filter>
+      <Filter>01. Bindable</Filter>
     </ClCompile>
     <ClCompile Include="StencilState.cpp">
-      <Filter>02. Bindable\State</Filter>
+      <Filter>01. Bindable\State</Filter>
     </ClCompile>
     <ClCompile Include="RasterizerState.cpp">
-      <Filter>02. Bindable\State</Filter>
+      <Filter>01. Bindable\State</Filter>
     </ClCompile>
     <ClCompile Include="IRenderer.cpp">
       <Filter>00. Graphics</Filter>
@@ -287,63 +276,89 @@
       <Filter>00. Graphics</Filter>
     </ClCompile>
     <ClCompile Include="BindingPass.cpp">
-      <Filter>03. Jobber\Pass</Filter>
+      <Filter>02. Jobber\Pass</Filter>
     </ClCompile>
     <ClCompile Include="Pass.cpp">
-      <Filter>03. Jobber\Pass</Filter>
+      <Filter>02. Jobber\Pass</Filter>
     </ClCompile>
     <ClCompile Include="RenderQueuePass.cpp">
-      <Filter>03. Jobber\Pass</Filter>
+      <Filter>02. Jobber\Pass</Filter>
     </ClCompile>
     <ClCompile Include="RenderGraph.cpp">
-      <Filter>03. Jobber\RenderGraph</Filter>
+      <Filter>02. Jobber\RenderGraph</Filter>
     </ClCompile>
     <ClCompile Include="ForwardRenderGraph.cpp">
-      <Filter>03. Jobber\RenderGraph</Filter>
+      <Filter>02. Jobber\RenderGraph</Filter>
     </ClCompile>
     <ClCompile Include="BufferClearPass.cpp">
-      <Filter>03. Jobber\Pass</Filter>
+      <Filter>02. Jobber\Pass</Filter>
     </ClCompile>
     <ClCompile Include="ForwarRenderPass.cpp">
-      <Filter>03. Jobber\Pass</Filter>
+      <Filter>02. Jobber\Pass</Filter>
     </ClCompile>
     <ClCompile Include="Model.cpp">
-      <Filter>04. Model</Filter>
+      <Filter>03. Model</Filter>
     </ClCompile>
     <ClCompile Include="Texture.cpp">
-      <Filter>02. Bindable</Filter>
+      <Filter>01. Bindable</Filter>
     </ClCompile>
     <ClCompile Include="Surface.cpp">
-      <Filter>05. Helper</Filter>
+      <Filter>04. Helper</Filter>
     </ClCompile>
     <ClCompile Include="Node.cpp">
-      <Filter>04. Model</Filter>
+      <Filter>03. Model</Filter>
     </ClCompile>
     <ClCompile Include="VertexShader.cpp">
-      <Filter>02. Bindable\Shader</Filter>
+      <Filter>01. Bindable\Shader</Filter>
     </ClCompile>
     <ClCompile Include="ConstantBuffer.cpp">
-      <Filter>02. Bindable\Buffer\CBuf</Filter>
+      <Filter>01. Bindable\Buffer\CBuf</Filter>
     </ClCompile>
     <ClCompile Include="TransformCBuf.cpp">
-      <Filter>02. Bindable\Buffer\CBuf</Filter>
+      <Filter>01. Bindable\Buffer\CBuf</Filter>
     </ClCompile>
     <ClCompile Include="DynamicConstant.cpp">
-      <Filter>02. Bindable\Buffer</Filter>
+      <Filter>01. Bindable\Buffer</Filter>
     </ClCompile>
     <ClCompile Include="LayoutCodex.cpp">
-      <Filter>02. Bindable\Buffer</Filter>
+      <Filter>01. Bindable\Buffer</Filter>
     </ClCompile>
     <ClCompile Include="PixelShader.cpp">
-      <Filter>02. Bindable\Shader</Filter>
+      <Filter>01. Bindable\Shader</Filter>
     </ClCompile>
     <ClCompile Include="Sampler.cpp">
-      <Filter>02. Bindable</Filter>
+      <Filter>01. Bindable</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager.cpp">
+      <Filter>00. Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="PixelCBufAlpha.cpp">
+      <Filter>01. Bindable\Buffer\CBuf</Filter>
+    </ClCompile>
+    <ClCompile Include="FullScreenPass.cpp">
+      <Filter>02. Jobber\Pass</Filter>
+    </ClCompile>
+    <ClCompile Include="OffScreenMappingPass.cpp">
+      <Filter>02. Jobber\Pass</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="..\Resources\Shaders\Model_VS.hlsl">
-      <Filter>02. Bindable\Shader\HLSL</Filter>
+      <Filter>01. Bindable\Shader\HLSL</Filter>
     </FxCompile>
+    <FxCompile Include="..\Resources\Shaders\Model_PS.hlsl">
+      <Filter>01. Bindable\Shader\HLSL</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Resources\Shaders\Fullscreen_VS.hlsl">
+      <Filter>01. Bindable\Shader\HLSL</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Resources\Shaders\Fullscreen_PS.hlsl">
+      <Filter>01. Bindable\Shader\HLSL</Filter>
+    </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Resources\Shaders\LightHelper.hlsli">
+      <Filter>01. Bindable\Shader\HLSL</Filter>
+    </None>
   </ItemGroup>
 </Project>

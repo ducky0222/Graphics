@@ -129,9 +129,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="GameProcess.h" />
+    <ClInclude Include="InputManager.h" />
+    <ClInclude Include="TimeManager.h" />
     <ClInclude Include="WindowsHeader.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="GameProcess.cpp" />
+    <ClCompile Include="InputManager.cpp" />
+    <ClCompile Include="TimeManager.cpp" />
     <ClCompile Include="WinMain.cpp" />
   </ItemGroup>
   <ItemGroup>
